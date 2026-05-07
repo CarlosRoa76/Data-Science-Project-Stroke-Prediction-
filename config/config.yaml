@@ -1,0 +1,7 @@
+artifacts_root_dir: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://github.com/CarlosRoa76/Data-Science-Project-Stroke-Prediction-/blob/main/data/stroke_prediction_dataset.zip?raw=true
+  local_data_file: artifacts/data_ingestion/dataset.zip
+  unzip_dir: artifacts/data_ingestion

@@ -2,6 +2,7 @@
 
 ### Workflows -- ML Pipeline
 
+Modules: Every commit per module
 1. Data Ingestion
 2. Data Validation
 3. Data Trasnformation

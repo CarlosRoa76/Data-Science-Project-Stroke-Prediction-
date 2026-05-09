@@ -9,10 +9,15 @@ class DataTransformation:
         self.config = config
 
     def train_test_split(self):
-        print("Performing train-test split...")
-        
         data = pd.read_csv(self.config.data_path)
-        train_data, test_data = train_test_split(data)
+
+        #handling missing values
+        data['bmi'] = data['bmi'].fillna(data['bmi'].median())
+
+        #one hot encoding
+        data = pd.get_dummies(data, columns=['gender', 'ever_married', 'work_type', 'Residence_type', 'smoking_status'])
+        
+        train_data, test_data = train_test_split(data, test_size=0.2, random_state=42)
 
         train_data.to_csv(os.path.join(self.config.root_dir, "train.csv"),index=False)
         test_data.to_csv(os.path.join(self.config.root_dir, "test.csv"),index=False)

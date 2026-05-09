@@ -32,3 +32,14 @@ class ModelTrainerConfig:
     gamma: float
     subsample: float
     target_col: str
+
+
+@dataclass
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_data_path: Path
+    model_path: Path
+    all_params: dict
+    metric_file_name: Path
+    target_col: str
+    mlflow_url: str

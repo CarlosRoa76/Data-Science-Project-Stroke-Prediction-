@@ -1,8 +1,12 @@
+import dagshub
+dagshub.init(repo_owner='CarlosRoa76', repo_name='Data-Science-Project-Stroke-Prediction-', mlflow=True)
+
 from src.stroke_prediction import logger
 from src.stroke_prediction.pipeline.data_ingestion import DataIngestionTrainingPipeline
 from src.stroke_prediction.pipeline.data_validation import DataValidationTrainingPipeline
 from src.stroke_prediction.pipeline.data_transformation_pipeline import DataTransformationPipeline
 from src.stroke_prediction.pipeline.data_trainer_pipeline import ModelTrainerPipeline
+from src.stroke_prediction.pipeline.data_evaluation_pipeline import DataEvaluationPipeline
 
 STAGE_NAME = "Data Ingestion Stage"
 try:
@@ -39,6 +43,16 @@ try:
     logger.info(f">>>>>>> Stage {STAGE_NAME} started <<<<<<<")
     model_trainer_pipeline = ModelTrainerPipeline()
     model_trainer_pipeline.initiate_model_trainer()
+    logger.info(f">>>>>>> Stage {STAGE_NAME} completed <<<<<<<\n\n")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+STAGE_NAME = "Model Evaluation Stage"
+try:
+    logger.info(f">>>>>>> Stage {STAGE_NAME} started <<<<<<<")
+    model_evaluation_pipeline = DataEvaluationPipeline()
+    model_evaluation_pipeline.initiate_data_evaluation()
     logger.info(f">>>>>>> Stage {STAGE_NAME} completed <<<<<<<\n\n")
 except Exception as e:
     logger.exception(e)

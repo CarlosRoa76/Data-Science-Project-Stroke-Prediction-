@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .result-card { background: white; padding: 50px; border-radius: 12px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); text-align: center; max-width: 500px; width: 100%; }
+        h1 { color: #2c3e50; margin-bottom: 20px; }
+        .prediction-text { font-size: 28px; font-weight: bold; margin: 20px 0; color: #e74c3c; padding: 20px; background-color: #fdf2f0; border-radius: 8px; }
+        .btn-back { display: inline-block; background-color: #3498db; color: white; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: background-color 0.3s; margin-top: 20px; }
+        .btn-back:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+
+    <div class="result-card">
+        <h1>Analysis Complete</h1>
+        <p>Based on the provided patient metrics, the model predicts:</p>
+        
+        <div class="prediction-text">
+            {{ prediction }}
+        </div>
+        
+        <a href="/" class="btn-back">Run Another Prediction</a>
+    </div>
+
+</body>
+</html>

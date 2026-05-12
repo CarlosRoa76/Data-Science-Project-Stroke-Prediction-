@@ -45,6 +45,18 @@ Update the `Pipeline`: Link the component to a pipeline stage.
 
 Update `main.py`: Trigger the stage execution.
 
+---
+
+## 📊 Dataset Reference
+The model was trained using the **Stroke Prediction Dataset** available on Kaggle. This dataset is used to predict whether a patient is likely to have a stroke based on parameters such as gender, age, various illnesses, and smoking status.
+
+
+* **Dataset Link:** [Stroke Prediction Dataset (Kaggle)](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
+* **Attributes:** `age`, `hypertension`, `heart_disease`, `avg_glucose_level`, `bmi`, `smoking_status`, etc.
+
+---
+
+
 ## 🚀 How to Run
 1. Environment Setup
 ```bash
@@ -63,6 +75,3 @@ python app.py
 
 Then visit http://localhost:8080 in your browser.
 ```
-🔗 Project Link
-Check out the full repository here:
-GitHub: Data-Science-Project-Stroke-Prediction
